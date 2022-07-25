@@ -1,0 +1,94 @@
+body {
+  min-height: 100%;
+  background: lightblue;
+  color: white;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: grid;
+  grid-template: minmax(5vh, auto) 88vh minmax(5vh, auto)/1fr;
+  grid-template-areas: "header" "main" "footer";
+}
+.wrapper__header {
+  grid-area: header;
+}
+.wrapper__main {
+  grid-area: main;
+}
+.wrapper__footer {
+  grid-area: footer;
+}
+
+.header {
+  display: grid;
+  grid-template: 1fr/1fr minmax(auto, 1080px) 1fr;
+}
+.header__logo {
+  width: 50px;
+  height: 50px;
+  background: url(/img/favicon.png);
+  grid-column: 2/3;
+  justify-self: center;
+}
+
+.title {
+  display: grid;
+  grid-template: 50px/1fr 130px 1fr 1fr;
+  grid-gap: 5px;
+}
+.title__text {
+  display: block;
+  grid-column: 3/4;
+}
+.flip {
+  grid-column: 2/3;
+}
+.flip__face {
+  grid-template: 50px/130px;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: 0.3s;
+}
+.flip__face:hover {
+  transform: rotateY(180deg);
+}
+.flip__frontface {
+  transform: rotateY(0deg);
+  z-index: 2;
+  display: flex;
+  justify-content: end;
+}
+.flip__backface {
+  transform: rotateY(180deg);
+}
+.flip__frontface, .flip__backface {
+  grid-column: 1/2;
+  position: absolute;
+  top: 0;
+  right: 0;
+  backface-visibility: hidden;
+}
+
+.main {
+  display: grid;
+  grid-template: 100%/1fr minmax(auto, 1080px) 1fr;
+}
+.main__title {
+  grid-column: 2/3;
+}
+
+.footer {
+  display: grid;
+  grid-template: 1fr/1fr minmax(auto, 300px) minmax(auto, 780px) 1fr;
+}
+.footer__autor {
+  grid-column: 2/3;
+  align-self: center;
+  justify-self: center;
+}
+.footer__year {
+  grid-column: 3/4;
+  align-self: center;
+  justify-self: center;
+}
