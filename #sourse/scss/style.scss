@@ -49,11 +49,10 @@ body {min-height: 100%;
 	}
 	.title {
 		&__flip {
-		}
+			grid-column: 2 / 3;}
 	}
 }
 .flip {
-	grid-column: 2 / 3;
 	&__face {
 		grid-template: 50px / 130px;
 		perspective: 1000px;
