@@ -23,19 +23,33 @@ body {
 .header {
   display: grid;
   grid-template: 1fr/1fr minmax(auto, 1080px) 1fr;
+  background: rgba(0, 0, 0, 0.2);
 }
 .header__logo {
-  width: 50px;
-  height: 50px;
-  background: url(/img/favicon.png);
+  background: url("/img/favicon.png") left/contain no-repeat;
+  padding: 0 0 0 45px;
   grid-column: 2/3;
-  justify-self: center;
+  justify-self: start;
+  align-self: center;
+  font-family: Arima;
+  font-size: 24px;
+  text-shadow: 1px 1px 4px purple;
+}
+
+.main {
+  display: grid;
+  grid-template: 100%/1fr minmax(auto, 1080px) 1fr;
+}
+.main__title {
+  grid-column: 2/3;
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .title {
   display: grid;
   grid-template: 50px/1fr 130px 1fr 1fr;
   grid-gap: 5px;
+  color: purple;
 }
 .title__text {
   display: block;
@@ -70,17 +84,11 @@ body {
   backface-visibility: hidden;
 }
 
-.main {
-  display: grid;
-  grid-template: 100%/1fr minmax(auto, 1080px) 1fr;
-}
-.main__title {
-  grid-column: 2/3;
-}
-
 .footer {
   display: grid;
   grid-template: 1fr/1fr minmax(auto, 300px) minmax(auto, 780px) 1fr;
+  text-shadow: 0 0 4px black;
+  background: rgba(0, 0, 0, 0.4);
 }
 .footer__autor {
   grid-column: 2/3;
